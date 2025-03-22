@@ -1,0 +1,82 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.proposal-header {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #ff4d4d;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.yes {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.yes:hover {
+    background-color: #45a049;
+}
+
+.no {
+    background-color: #f44336;
+    color: white;
+}
+
+.no:hover {
+    background-color: #e53935;
+}
+
+.response-message {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.no-message {
+    font-size: 18px;
+    color: red;
+    display: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.no {
+    transition: transform 0.5s ease;
+}
+
+.no.moving {
+    transform: translateX(100px); /* Move the "No" button to the right */
+}
