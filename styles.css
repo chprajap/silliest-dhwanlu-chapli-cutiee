@@ -53,6 +53,9 @@ body {
 .no {
     background-color: #f44336;
     color: white;
+    position: absolute;
+    transition: transform 0.1s linear, left 0.1s linear, top 0.1s linear;
+    pointer-events: none; /* Disable mouse interaction */
 }
 
 .no:hover {
@@ -71,12 +74,4 @@ body {
     font-weight: bold;
     margin-top: 20px;
     transition: all 0.3s ease;
-}
-
-.no {
-    transition: transform 0.5s ease;
-}
-
-.no.moving {
-    transform: translateX(100px); /* Move the "No" button to the right */
 }
