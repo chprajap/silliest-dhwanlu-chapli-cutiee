@@ -20,7 +20,7 @@ function moveNoButton() {
 
 // Make the "Yes" button work normally
 document.getElementById("yesBtn").addEventListener("click", function() {
-    document.getElementById("responseMessage").textContent = "Finally pehli baar gf banayi, 💍 Yes dhwanlu tu j che ne bas tu j rahis!!";
+    document.getElementById("responseMessage").textContent = "Finally pehli ne chelli vaar gf banayi, 💍 Yes dhwanlu tu j che ne bas tu j rahis!!";
     document.getElementById("responseMessage").style.color = "green";
     container.style.backgroundColor = "#e8f5e9"; // Light green background
 });
