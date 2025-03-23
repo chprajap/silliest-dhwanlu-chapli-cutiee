@@ -23,6 +23,9 @@ document.getElementById("yesBtn").addEventListener("click", function() {
     
     // Remove the "No" button from the page
     noButton.style.display = "none";  // Alternatively, you can use: noButton.remove();
+    
+    // Hide the "You can't say No!" message
+    noMessage.style.display = "none";  // Hide the "You can't say No!" message
 });
 
 // Show message and move the "No" button when mouse hovers over it
