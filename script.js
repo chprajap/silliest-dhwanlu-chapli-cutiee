@@ -1,18 +1,45 @@
 // script.js
 let noButton = document.getElementById("noBtn");
+let yesButton = document.getElementById("yesBtn");
 let noMessage = document.getElementById("noMessage");
 let container = document.querySelector('.container');
 
-// Function to move the "No" button randomly within the screen
+// Function to get the position and size of an element
+function getElementPosition(element) {
+    const rect = element.getBoundingClientRect();
+    return {
+        x: rect.left,
+        y: rect.top,
+        width: rect.width,
+        height: rect.height
+    };
+}
+
+// Function to check if two elements overlap
+function isOverlap(button1, button2) {
+    const pos1 = getElementPosition(button1);
+    const pos2 = getElementPosition(button2);
+    
+    return !(pos1.x + pos1.width < pos2.x || 
+             pos1.x > pos2.x + pos2.width || 
+             pos1.y + pos1.height < pos2.y || 
+             pos1.y > pos2.y + pos2.height);
+}
+
+// Function to move the "No" button randomly within the screen, avoiding overlap with the "Yes" button
 function moveNoButtonRandomly() {
     let maxX = window.innerWidth - noButton.offsetWidth - 50; // Prevent the button from going off-screen
     let maxY = window.innerHeight - noButton.offsetHeight - 50;
 
-    let randomX = Math.random() * maxX;
-    let randomY = Math.random() * maxY;
-
-    noButton.style.left = `${randomX}px`;
-    noButton.style.top = `${randomY}px`;
+    let randomX, randomY;
+    
+    // Try moving the "No" button until it doesn't overlap with the "Yes" button
+    do {
+        randomX = Math.random() * maxX;
+        randomY = Math.random() * maxY;
+        noButton.style.left = `${randomX}px`;
+        noButton.style.top = `${randomY}px`;
+    } while (isOverlap(noButton, yesButton));  // Keep trying until there's no overlap
 }
 
 // Make the "Yes" button work normally
