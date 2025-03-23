@@ -16,7 +16,7 @@ function moveNoButton() {
 }
 
 // Move the "No" button continuously every 100ms
-setInterval(moveNoButton, 100);
+// setInterval(moveNoButton, 100);
 
 // Make the "Yes" button work normally
 document.getElementById("yesBtn").addEventListener("click", function() {
