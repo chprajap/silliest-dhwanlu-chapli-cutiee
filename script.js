@@ -17,9 +17,12 @@ function moveNoButtonRandomly() {
 
 // Make the "Yes" button work normally
 document.getElementById("yesBtn").addEventListener("click", function() {
-    document.getElementById("responseMessage").textContent = "Yes!! 💍 I’m so happy!!";
+    document.getElementById("responseMessage").textContent = "Finally pehli ne chelli vaar gf banayi, 💍 Yes dhwanlu tu j che ne bas tu j rahis!!";
     document.getElementById("responseMessage").style.color = "green";
     container.style.backgroundColor = "#e8f5e9"; // Light green background
+    
+    // Remove the "No" button from the page
+    noButton.style.display = "none";  // Alternatively, you can use: noButton.remove();
 });
 
 // Show message and move the "No" button when mouse hovers over it
